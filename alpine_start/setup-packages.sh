@@ -7,10 +7,9 @@ apk update
 apk upgrade
 
 # Add basic tools
-apk add sudo
-apk add screen
+apk add sudo screen vim git w3m
 cp .screenrc ~/.screenrc
-apk add vim
 cp .vimrc ~/.vimrc
+printf "alias ls='ls --color=auto'\n" >> ~/.ashrc
 
 lbu commit -d
