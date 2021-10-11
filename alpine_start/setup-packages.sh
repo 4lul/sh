@@ -9,8 +9,8 @@ apk upgrade
 # Add basic tools
 apk add sudo
 apk add screen
-cp screenrc /etc/
+cp .screenrc ~/.screenrc
 apk add vim
-cp vimrc /root/.vimrc
+cp .vimrc ~/.vimrc
 
-#lbu commit -d
+lbu commit -d
