@@ -21,3 +21,9 @@ appearance внешний_вид
 are_meant предназначены
 dispatch отправка-отсылка
 happens случается
+powder порошок
+preferred преимущественно
+efficient эффективных
+comparisons сравнение
+intrinsic свойственный-внутренний
+note-that обратите-внимание
