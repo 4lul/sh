@@ -1,8 +1,9 @@
-#hardstatus off
+# Status string
 hardstatus on
 hardstatus alwayslastline
 hardstatus string "%{.kW}%-w%{.bW}%t [%n]%{-}%+w %=%{..G} %H %{..Y} %Y/%m/%d %c"
-#hardstatus alwayslastline '%{= kG}[ %{y}%H%? %1`%?%{g} ][%= %{= kw}%-w%{+b yk} %n*%t%?(%u)%? %{-}%+w %=%{g}][ %{y}%l %{g}][%{W}%c:%s %{g}]'
+
+# Signal
 msgwait 1
 vbell off
 
@@ -36,6 +37,7 @@ bindkey "^[OR" prev
 bindkey "^[OS" next
 
 # Get rid of silly xoff stuff
+# Form
 bind s split
 bind c screen 1
 bind ^c screen 1
@@ -66,3 +68,7 @@ bind ^h focus left
 bind ^j focus down
 bind ^k focus up
 bind ^l focus right
+
+# This line makes Detach and Re-attach without losing the regions/windows
+# layout
+layout save default
