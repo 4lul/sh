@@ -19,3 +19,5 @@ statement оператор-утверждение
 provides обеспечивает
 appearance внешний_вид
 are_meant предназначены
+dispatch отправка-отсылка
+happens случается
