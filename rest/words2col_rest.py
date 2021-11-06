@@ -43,7 +43,7 @@ def file_ex(file):
 
 def str2cell(line):
     res = ""
-    iter_w = map(lambda word: f"| {word.ljust(19)}|", line)
+    iter_w = map(lambda word: f"| {word[:18].ljust(19)}|", line)
     try:
         pos = next(iter_w)
     except:
@@ -66,17 +66,18 @@ def str2cell(line):
 def split_file_strings(header=True, sep=" "):
     file_ex(filepath)
 
-    def p_inline(line, sep, header):
-        print(str2cell(line.strip().split(sep)))
+    def print_row(line, sep, header):
+        cells = str2cell(line.strip().split(sep))
+        if header:
+            print(table_div(3, 20, 0))
+        print(cells)
         print(table_div(3, 20, header))
 
     with open(filepath, "r") as f:
-        print(table_div(3, 20, 0))
-        if header:
-            p_inline(f.readline(), sep, header)
-            header = False
+        print_row(f.readline(), sep, header)
+        header = False
         for _line in f:
-            p_inline(_line, sep, header)
+            print_row(_line, sep, header)
 
 
 if __name__ == "__main__":
