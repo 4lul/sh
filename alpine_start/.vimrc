@@ -143,13 +143,11 @@ autocmd FileType python imap <buffer> <F9> <esc>:w<CR>:exec '!python3' shellesca
 " Set the + register as the default.
 set clipboard=unnamedplus
 
-execute pathogen#infect()
-
 " Hide completeopt buffer split.
 autocmd FileType python setlocal completeopt-=preview
 
 " Colorscheme.
-colorscheme gruvbox
+colorscheme ron
 
 
 set fileencodings=utf-8,cp1251,cp866,koi8-r
@@ -251,6 +249,3 @@ menu Encoding.ibm-866 :e ++enc=8bit-ibm866<CR>
 menu Encoding.utf-8 :e ++enc=2byte-utf-8 <CR>
 map <F10> :emenu Encoding.<TAB> 
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-let g:airline_theme='simple'
