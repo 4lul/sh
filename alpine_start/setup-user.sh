@@ -1,3 +1,5 @@
+sed -i '/^#/s/^#//g' /etc/apk/repositories
+apk add sudo
 read -p "Enter username of account to create: " username
 
 # Add user, set password and enable terminal login
