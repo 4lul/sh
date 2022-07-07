@@ -12,5 +12,3 @@ echo "PermitEmptyPasswords no" >> /etc/ssh/sshd_config
 
 # Start SSH
 /etc/init.d/sshd start
-
-lbu commit -d
