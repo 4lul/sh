@@ -14,7 +14,7 @@ printf $USER
 read _
 adduser $USER input
 adduser $USER video
-apk add ttf-dejavu && \
+apk add ttf-dejavu firefox-esr && \
 apk add seatd && \
 rc-update add seatd && \
 rc-service seatd start && \
@@ -25,7 +25,8 @@ rc-update add elogind && \
 rc-service elogind start && \
 apk add sway sway-doc && \
 apk add xwayland foot dmenu swaylock swaybg swayidle && \
-mkdir ~/.run
+cp /opt/configs/.mozilla /opt/configs/.config /home/$USER/ && \
+mkdir /home/$USER/.run
 #XDG_RUNTIME_DIR=~/.run dbus-launch sway
 #XDG_RUNTIME_DIR=~/.run dbus-launch seatd-launch sway
 #alias swayinit="XDG_RUNTIME_DIR=~/.run dbus-launch seatd-launch sway"
