@@ -2,6 +2,7 @@ apk add vlc-daemon vlc-dev
 setup-acf
 apk add acf-vlc-daemon
 
+read -p "Enter username of account to create local lua http files for vlc: " user
 mkdir -p /home/$user/.local/share/vlc/lua/http
 cp -r ./vlc-lua-http/* /home/$user/.local/share/vlc/lua/http
 

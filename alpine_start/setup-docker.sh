@@ -7,4 +7,3 @@ rc-update add docker boot
 # Start the service
 service docker start
 
-lbu commit -d
