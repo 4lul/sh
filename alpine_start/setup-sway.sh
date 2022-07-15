@@ -26,7 +26,9 @@ rc-service elogind start && \
 apk add sway sway-doc && \
 apk add xwayland foot dmenu swaylock swaybg swayidle && \
 cp -r /opt/configs/.mozilla /opt/configs/.config /home/$USER/ && \
-mkdir /home/$USER/.run
+chown -R $USER /home/$USER/.config && \
+chown -R $USER /home/$USER/.mozilla && \
+sudo -u $USER mkdir /home/$USER/.run
 #XDG_RUNTIME_DIR=~/.run dbus-launch sway
 #XDG_RUNTIME_DIR=~/.run dbus-launch seatd-launch sway
 #alias swayinit="XDG_RUNTIME_DIR=~/.run dbus-launch seatd-launch sway"
