@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import unicode_literals
-import youtube_dl
+import yt_dlp
 
 
 class MyLogger(object):
@@ -23,7 +23,7 @@ def my_hook(d):
 
 
 ydl_opts = {
-    "format": "bestvideo[height=720]/bestvideo[height=1080]/best",
+    "format": "bestvideo[height=720]+ba/bestvideo[height=1080]+ba/best",
     "outtmpl": "files/%(title)s-%(id)s.%(ext)s",
     "postprocessors": [
         #{
@@ -38,10 +38,20 @@ ydl_opts = {
     ],
     "logger": MyLogger(),
     "progress_hooks": [my_hook],
+    "http_chunk_size": 2097152,
 }
+
+#ydl_opts = {
+#    'format': 'm4a/bestaudio/best',
+#    'postprocessors': [{  # Extract audio using ffmpeg
+#        'key': 'FFmpegExtractAudio',
+#        'preferredcodec': 'm4a',
+#    }]
+#}
+
 nd = ["https://www.youtube.com/" + input("Hash video from youtube: ")]
 
-with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+with yt_dlp.YoutubeDL(ydl_opts) as ydl:
     ydl.download(nd)
 
 print("Done. ")
