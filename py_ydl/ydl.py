@@ -23,8 +23,10 @@ def my_hook(d):
 
 
 ydl_opts = {
+    "ignoreerrors": True,
     "format": "bestvideo[height=720]+ba/bestvideo[height=1080]+ba/best",
     "outtmpl": "files/%(title)s-%(id)s.%(ext)s",
+    "download-archive": "files/archive.txt",
     "postprocessors": [
         #{
         #    "key": "FFmpegExtractAudio",
@@ -49,7 +51,7 @@ ydl_opts = {
 #    }]
 #}
 
-nd = ["https://www.youtube.com/" + input("Hash video from youtube: ")]
+nd = [input("Video from youtube: ")]
 
 with yt_dlp.YoutubeDL(ydl_opts) as ydl:
     ydl.download(nd)
